@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <script type="text/javascript" src="qrcode-kazuhi.js"></script>
+  <title>client side test for node-qrcode</title>  
+</head>
+
+<body>
+  <h1 class="title">node-qrcode</h1>
+
+  <div id="canvas"></div>
+
+  <script>
+    var typeNumber = 4
+    var errorCorrectionLevel = 'L'
+    var qr = qrcode(typeNumber, errorCorrectionLevel)
+    qr.addData('chow hsien lung','Byte')
+    qr.make()
+    // document.getElementById('canvas').innerHTML = qr.createImgTag()
+    // document.getElementById('canvas').innerHTML = qr.createSvgTag()
+    document.getElementById('canvas').innerHTML = qr.createBytes()
+    // document.getElementById('canvas').innerHTML = qr.createDataURL()
+
+    
+
+
+  </script>
+</body>
+
+</html>
